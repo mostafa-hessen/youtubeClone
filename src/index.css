@@ -1,13 +1,332 @@
+/* ===== Glopal classes ====  */
+/* @import "~bootstrap/scss/bootstrap"; */
+:root {
+  --darkMode: #202020;
+  --surface-color: #fff;
+  --curve: 35;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+  background-color: var(--darkMode) !important;
+  color: var(--surface-color) !important;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(230, 17, 17) !important;
+  border-radius: 10px;
+  height: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.imgCard {
+  overflow: hidden;
+}
+
+.img img,
+.imgCard img {
+  width: 100%;
+  height: 84%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* ===== header ===== */
+header {
+  /* background-color: rgb(21, 19, 19); */
+  background-color: var(--darkMode);
+  padding: 10px;
+  height: 60px;
+}
+
+/* ==== youTubecards ==== */ 
+.cards {
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+    background-color: var(--darkMode) !important;
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: calc(var(--curve) * 1px);
+  background-color: var(--darkMode);
+  transform: translateY(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(20%);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 1em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;
+  background-color: var(--darkMode);
+  transform: translateY(-100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--darkMode);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}
+.card__title {
+  font-size: 1em;
+  margin: 0 0 0.3em;
+  color: #6a515e;
+  width: 140px;
+  /* white-space: w; */
+  white-space: wrap;
+  height: 20px;
+  overflow: hidden;
+}
+.card:hover .card__header {
+  transform: translateY(0);
+}
+.card:hover .card__title{
+  min-height: 40px;
+  max-height: 100px;
+}
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";
+  font-size: 0.8em;
+  color: #d7bdca;
+}
+
+.card__status {
+  font-size: 0.8em;
+  color: #d7bdca;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #d7bdca;
+  font-family: "MockFlowFont";
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  height: 60px;
+}
+
+/*===== SidNav= mainNav ==== */
+.MainNav {
+  position: fixed;
+  top: 70px;
+}
+.MainNav ul li {
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  display: flex;
+  max-width: 170px;
+  align-items: center;
+  transition: background 1s ease-in-out;
+  cursor: pointer;
+  border-radius:30px;
+}
+.MainNav ul li:hover ,.MainNav ul li.active{
+  /* background: red; */
+  background: rgb(232, 34, 34);
+}
+.loardIcon{
+  display: none;
+}
+
+/* ==== Lastest Videos ==== */
+
+.carousel {
+  width: 100%;
+  overflow-x: scroll;
+  padding: 30px;
+  padding-top: 30px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.carousel__container {
+  white-space: nowrap;
+  /* margin: 70px 0px; */
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.categories__title {
+  color: rgb(77, 55, 102);
+  font-size: 28px;
+  position: absolute;
+  padding-left: 30px;
+}
+
+.carousel-itemCard {
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  background-color: #95bcd6;
+  overflow: hidden;
+  margin-right: 10px;
+  margin-top: 70px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: 1000ms all;
+  transition: 1000ms all;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+  position: relative;
+}
+
+.carousel-itemCard:hover ~ .carousel-itemCard {
+  -webkit-transform: translate3d(70px, 0, 0);
+  transform: translate3d(70px, 0, 0);
+}
+
+.carousel__container:hover .carousel-itemCard {
+  opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-itemCard:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.carousel-itemCard__img {
+  width: 200px;
+  height: 250px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.carousel-itemCard__details {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(rgba(0, 0, 0, 0.9)),
+    to(rgba(0, 0, 0, 0))
+  );
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  font-size: 10px;
+  opacity: 0;
+  -webkit-transition: 450ms opacity;
+  transition: 450ms opacity;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.carousel-itemCard__details:hover {
+  opacity: 1;
+}
+
+.carousel-itemCard__details span {
+  /* width: 10px;
+    height: 10px; */
+  font-size: 0.9rem;
+  color: #2ecc71;
+  /* background-color: white; */
+}
+
+.carousel-itemCard__details .controls {
+  padding-top: 180px;
+}
+
+.carousel-itemCard__details .carousel-itemCard__details--title,
+.carousel-itemCard__details--subtitle {
+  color: #fff;
+  margin: 5px 0;
+}
+
+
+/*  ====== Channel Detaiels =====  */
+
+/* .card-avatar.avatar-border {
+  box-shadow: 0 -0.75px 0.5px 0 #212428 inset, 0 0.5px 0.5px #535d65 inset,
+    0 0.5px 0.5px -0.25px rgb(5 6 6 / 50%),
+    0 1.75px 1px -0.25px rgb(26 29 31 / 25%);
+  padding: 40px !important;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  border: 1.5px solid #15181a;
+  background: linear-gradient(#3c4349, #252a2d);
+  position: relative;
+  background-image: url(https://assets.codepen.io/4927073/icon-105_edited.jpg);
+  background-size: 130%;
+  background-position: 20% 10%;
+  box
+} */
