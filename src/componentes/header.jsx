@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
-    <header >
-        <div className="container-fluid p-2 position-fixed top-0">
+    <header className=' position-fixed top-0 left-0 w-100'  style={{zIndex:'999',background:"#202020" }} >
+        <div className="container-fluid ">
             <div className="row">
                 <div className="col-6">
-                    <div className="logo   ">
+                    <Link className="logo   "  to={'/'}>
                         <img src="https://i.ibb.co/s9Qys2j/logo.png" width={40} alt="youtubeLogo" />
-                    </div>
+                    </Link>
                 </div>
                 <div className="col-6">
                         <div className="search&photo">

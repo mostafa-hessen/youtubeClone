@@ -15,5 +15,5 @@ export const categories = [
   // { name: 'Sunnah', icon:"" },
   // { name: 'Hadeth', icon:"" },
   // { name: 'Gym', icon:"https://cdn.lordicon.com/wibomifa.json" },
-  { name: 'Crypto', icon:"" },
+  { name: 'Crypto', icon:"https://cdn.lordicon.com/wxnxiano.json" },
 ];

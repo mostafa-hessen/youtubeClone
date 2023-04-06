@@ -4,6 +4,7 @@
   --darkMode: #202020;
   --surface-color: #fff;
   --curve: 35;
+  --header:60
 }
 body {
   margin: 0;
@@ -53,13 +54,17 @@ code {
   object-fit: cover;
   object-position: top;
 }
+.img .imgYoutube
+{
+  height: 100%  !important;
 
+}
 /* ===== header ===== */
 header {
   /* background-color: rgb(21, 19, 19); */
   background-color: var(--darkMode);
   padding: 10px;
-  height: 60px;
+  height: var(--header)
 }
 
 /* ==== youTubecards ==== */ 
@@ -78,7 +83,9 @@ header {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
-
+.card__header-text{
+  text-decoration:none
+}
 .card__image {
   width: 100%;
   height: auto;
@@ -313,20 +320,20 @@ header {
 
 
 /*  ====== Channel Detaiels =====  */
+.--card-cup.bg-primary {
+  height: 245px;
+  width: 100%;
+  background-image: url('https://i.pinimg.com/originals/9d/f4/89/9df48939ab918b460cd289d78be3fdde.jpg') !important;
+  background-size: cover;
+  background-position: 50% 50%;
+}
 
-/* .card-avatar.avatar-border {
-  box-shadow: 0 -0.75px 0.5px 0 #212428 inset, 0 0.5px 0.5px #535d65 inset,
-    0 0.5px 0.5px -0.25px rgb(5 6 6 / 50%),
-    0 1.75px 1px -0.25px rgb(26 29 31 / 25%);
-  padding: 40px !important;
-  width: 40px;
-  height: 40px;
-  margin: auto;
-  border: 1.5px solid #15181a;
-  background: linear-gradient(#3c4349, #252a2d);
-  position: relative;
-  background-image: url(https://assets.codepen.io/4927073/icon-105_edited.jpg);
-  background-size: 130%;
-  background-position: 20% 10%;
-  box
-} */
+/*  ====== video Detaiels =====  */
+.videoDetaiels{
+  margin-top: calc( var(--header)* 2px ) 
+}
+
+.videoDetaiels iframe{
+  width:100%;
+  height:450px
+}
