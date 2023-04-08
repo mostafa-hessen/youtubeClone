@@ -4,7 +4,7 @@
   --darkMode: #202020;
   --surface-color: #fff;
   --curve: 35;
-  --header:60
+  --header: 60;
 }
 body {
   margin: 0;
@@ -54,20 +54,59 @@ code {
   object-fit: cover;
   object-position: top;
 }
-.img .imgYoutube
-{
-  height: 100%  !important;
-
+.img .imgYoutube {
+  height: 100% !important;
 }
 /* ===== header ===== */
 header {
   /* background-color: rgb(21, 19, 19); */
   background-color: var(--darkMode);
   padding: 10px;
-  height: var(--header)
+  height: var(--header);
+}
+ 
+.search__input {
+  min-width: 40%;
+  /* max-width:80%; */
+  padding: 12px 24px;
+  background-color: transparent;
+  transition: transform 250ms ease-in-out;
+  font-size: 14px;
+  line-height: 18px;
+  color: #575756;
+  background-color: transparent;
+  background-image: url("data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 95% center;
+  border-radius: 50px;
+  border: 1px solid #575756;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
-/* ==== youTubecards ==== */ 
+@media (min-width:600px){
+.search__input {
+  width:70%
+}
+}
+.search__input::placeholder {
+  color: color(#575756 a(0.8));
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.search__input:hover,
+.search__input:focus {
+  padding: 12px 0;
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #575756;
+  border-radius: 0;
+  background-position: 100% center;
+}
+
+/* ==== youTubecards ==== */
 .cards {
 }
 
@@ -78,13 +117,12 @@ header {
   border-radius: calc(var(--curve) * 1px);
   overflow: hidden;
   text-decoration: none;
-    background-color: var(--darkMode) !important;
-    border: none;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
+  background-color: var(--darkMode) !important;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.card__header-text{
-  text-decoration:none
+.card__header-text {
+  text-decoration: none;
 }
 .card__image {
   width: 100%;
@@ -145,7 +183,7 @@ header {
 .card:hover .card__header {
   transform: translateY(0);
 }
-.card:hover .card__title{
+.card:hover .card__title {
   min-height: 40px;
   max-height: 100px;
 }
@@ -155,8 +193,6 @@ header {
   height: 50px;
   border-radius: 50%;
 }
-
-
 
 .card__tagline {
   display: block;
@@ -188,6 +224,7 @@ header {
   position: fixed;
   top: 70px;
 }
+
 .MainNav ul li {
   padding: 6px 10px;
   margin-bottom: 8px;
@@ -196,16 +233,30 @@ header {
   align-items: center;
   transition: background 1s ease-in-out;
   cursor: pointer;
-  border-radius:30px;
+  border-radius: 30px;
 }
-.MainNav ul li:hover ,.MainNav ul li.active{
+.MainNav ul li:hover,
+.MainNav ul li.active {
   /* background: red; */
   background: rgb(232, 34, 34);
 }
-.loardIcon{
+.loardIcon {
   display: none;
 }
+@media (max-width: 992px) {
+  .MainNav {
+    position: relative;
 
+    width: 100%;
+    display: flex;
+  }
+
+  .MainNav .ul {
+    display: flex !important;
+    overflow-x: scroll;
+    font-size: 13px;
+  }
+}
 /* ==== Lastest Videos ==== */
 
 .carousel {
@@ -318,22 +369,39 @@ header {
   margin: 5px 0;
 }
 
-
 /*  ====== Channel Detaiels =====  */
 .--card-cup.bg-primary {
   height: 245px;
   width: 100%;
-  background-image: url('https://i.pinimg.com/originals/9d/f4/89/9df48939ab918b460cd289d78be3fdde.jpg') !important;
+  background-image: url("https://i.pinimg.com/originals/9d/f4/89/9df48939ab918b460cd289d78be3fdde.jpg") !important;
   background-size: cover;
   background-position: 50% 50%;
 }
 
 /*  ====== video Detaiels =====  */
-.videoDetaiels{
-  margin-top: calc( var(--header)* 2px ) 
+.videoDetaiels {
+  overflow: hidden;
+  margin-top: calc(var(--header) * 2px);
 }
 
-.videoDetaiels iframe{
-  width:100%;
-  height:450px
+.videoDetaiels iframe {
+  width: 100%;
+  height: 520px;
 }
+
+@media (max-width: 992px) {
+  .videoDetaiels .relatedVideo {
+    height: 100%;
+    overflowy: hidden;
+    padding-right: 0 !important;
+  }
+}
+@media (min-width: 992px) {
+  .videoDetaiels .relatedVideo {
+    /* background:red; */
+    height: 80vh !important;
+    overflow-y: scroll !important;
+  }
+}
+
+/*= */

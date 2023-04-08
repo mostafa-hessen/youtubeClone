@@ -12,9 +12,10 @@ function Header() {
                     </Link>
                 </div>
                 <div className="col-6">
-                        <div className="search&photo">
-
-                        </div>
+                <div class="search__container">
+  
+    <input class="search__input" type="text" placeholder="Search"/>
+</div>
                 </div>
 
  

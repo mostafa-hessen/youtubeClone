@@ -4,7 +4,7 @@ export const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
 
 const options = {
   params: {
-    maxResults: 50,
+    maxResults: 8,
   },
   headers: {
     'X-RapidAPI-Key':' d90252a778mshf9fd349ad860da6p1b990cjsn92dea7c0e767',

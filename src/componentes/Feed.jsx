@@ -18,10 +18,10 @@ function Feed() {
   return (
     // <div>
       <div className="row">
-        <div className="col-2">
+        <div className="col-12 col-lg-3   d-lg-block">
           <MainNavBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}  />
         </div>
-        <div className="col-9">
+        <div className="col-11 col-lg-9 mx-auto">
            <Videos videos={videos} selectedCategory={selectedCategory} />
         </div>
       </div>
