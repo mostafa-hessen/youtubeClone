@@ -1,8 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SkeltonLatest from "./SkeltonLatest";
 
 function LatestVidoes(props) {
+  const [Load, setLoad] = useState(true)
+  useEffect(() => {
+    
+    setTimeout(() => {
+      setLoad(false)
+    }, 3500);
+   
+  setLoad(true)
 
+  console.log(props?.selectedCategory);
+  }, [])
+  
 
   
 
@@ -17,6 +29,7 @@ function LatestVidoes(props) {
 
           {props.latest?.map((ele,index) => {
             return (
+              Load?<SkeltonLatest key={index}/>:
               <Link to={`videoDetailes/${ele?.id?.videoId}`} className="carousel-itemCard" key={index} >
                 <img
                   className="carousel-itemCard__img"

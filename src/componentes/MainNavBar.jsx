@@ -12,7 +12,7 @@ function MainNavBar(props) {
       <ul className=" mt-3  ul postiob-fixed p-3 list-unstyled h-100">
         {categories?.map((ele,index) => {
           return (
-            <li key={index} className={props.selectedCategory==ele.name?'active':""} onClick={()=>sendCateogryAndChangActiveclass(ele.name)}>
+            <li key={index} className={props.selectedCategory==ele.category?'active':""} onClick={()=>sendCateogryAndChangActiveclass(ele.category)}>
               <lord-icon
                 src={ele.icon}
                 trigger="loop"

@@ -16,11 +16,6 @@ function YoutubeCard(props) {
   
   return (
     <div>
-      
-{/* ===  item  */}
-      
-
-
       <ul className="cards list-unstyled">
         <li>
           <div href="" className="card">

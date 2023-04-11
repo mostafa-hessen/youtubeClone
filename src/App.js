@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Header ,Feed,VideoDetailes, ChannelDetailes} from "./componentes/allComponent";
+import { Header ,Feed,VideoDetailes, ChannelDetailes, SearchedResultPage} from "./componentes/allComponent";
 // import {} from "./";
 import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 
@@ -13,6 +13,7 @@ function App() {
           <Route   path={'/'} element={<Feed/>}/>
           <Route path={'/channelDetailes/:id'} element={<ChannelDetailes/>}/>
           <Route path={'/videoDetailes/:id'} element={<VideoDetailes/>}/>
+          <Route path={'/searchedpage/:serchedValue'} element={<SearchedResultPage/>}/>
         </Routes>
       </BrowserRouter>
     </div>

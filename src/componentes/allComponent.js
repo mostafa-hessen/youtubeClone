@@ -6,12 +6,9 @@ export { default as LatestVidoes } from './LatestVidoes';
 export { default as Feed } from './Feed';
 export { default as ChannelDetailes } from './ChannelDetailes';
 export { default as VideoDetailes } from './VideoDetaiels';
-// export { default as Feed } from './Feed';
-// export { default as Feed } from './Feed';
-// export { default as Loader } from './Loader';
-// export { default as Navbar } from './Navbar';
-// export { default as SearchBar } from './SearchBar';
-// export { default as VideoDetail } from './VideoDetail';
-// export { default as SearchFeed } from './SearchFeed';
-// export { default as Videos } from './Videos';
-// export { default as Sidebar } from './Sidebar';
+export { default as SkeltonEffect } from './SkeltonEffectVideoCard';
+export { default as SkeltonLatest } from './SkeltonLatest';
+export { default as SearchedResultPage } from './SearchedResultPage';
+export { default as SkeltonForVideoPlayer } from './SkeltonForVideoPlayer';
+export { default as VideoPlayer } from './videoPlayer';
+ 

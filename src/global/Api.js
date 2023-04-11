@@ -1,14 +1,12 @@
-import axios, { Axios } from 'axios';
-
+import axios from 'axios';
 export const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
 
 const options = {
   params: {
-    maxResults: 8,
+    maxResults: 6,
   },
   headers: {
     'X-RapidAPI-Key':' d90252a778mshf9fd349ad860da6p1b990cjsn92dea7c0e767',
-    //  'd90252a778mshf9fd349ad860da6p1b990cjsn92dea7c0e767',
     'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
   },
 };

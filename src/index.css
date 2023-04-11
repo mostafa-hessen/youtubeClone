@@ -32,7 +32,7 @@ code {
 ::-webkit-scrollbar-thumb {
   background-color: rgb(230, 17, 17) !important;
   border-radius: 10px;
-  height: 20px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -56,6 +56,29 @@ code {
 }
 .img .imgYoutube {
   height: 100% !important;
+}
+.skelton{
+transition: all 1s ease-in-out;
+-webkit-transition: all 1s  ease-in-out ;
+-moz-transition: all 1s  ease-in-out ;
+-ms-transition: all 1s  ease-in-out ;
+-o-transition: all 1s  ease-in-out ;
+position: relative;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+-ms-border-radius: 30px;
+-o-border-radius: 30px;
+animation-name: skotlite;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+transition: all 1s  ease-in-out ;
+}
+
+@keyframes skotlite {
+ to {
+  opacity: 0.6;
+}
 }
 /* ===== header ===== */
 header {
@@ -87,6 +110,11 @@ header {
 }
 
 @media (min-width:600px){
+.search__input {
+  width:70%
+}
+}
+@media (max-width:360px){
 .search__input {
   width:70%
 }
